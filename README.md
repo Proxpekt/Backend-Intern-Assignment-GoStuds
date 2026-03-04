@@ -426,6 +426,17 @@ Demonstration includes:
 
 ---
 
+## Postman Collection
+
+A ready-to-use Postman collection is included.
+
+File:
+postman/Assesment.postman_collection.json
+
+Import it into Postman to test all APIs instantly.
+
+---
+
 # Design Decisions
 
 ### Custom User Model
