@@ -1,0 +1,323 @@
+{
+  "info": {
+    "_postman_id": "87a3a2cb-def6-4b71-9a91-9b6bbdf760a1",
+    "name": "Assesment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52002931",
+    "_collection_link": "https://go.postman.co/collection/52002931-87a3a2cb-def6-4b71-9a91-9b6bbdf760a1?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "username",
+                  "value": "airBender",
+                  "type": "text",
+                  "uuid": "de2d847b-4a2d-48a7-958b-dba864e653d4"
+                },
+                {
+                  "key": "email",
+                  "value": "aayushsaxena003@gmail.com",
+                  "type": "text",
+                  "uuid": "da66e959-62d3-4847-a022-dc7fb775e7b5"
+                },
+                {
+                  "key": "full_name",
+                  "value": "Aayush Saxena",
+                  "type": "text",
+                  "uuid": "be00e86a-d598-4afb-8f2c-445d82853a25"
+                },
+                {
+                  "key": "password",
+                  "value": "Password123@",
+                  "type": "text",
+                  "uuid": "ee4a3ef6-3a0b-43ca-9c1b-096248b4fe87"
+                },
+                {
+                  "key": "avatar",
+                  "type": "file",
+                  "uuid": "06393d1b-809a-4f13-b3bd-5188681f6c27",
+                  "src": "/C:/Users/aayus/Downloads/linkdin photo.jpeg"
+                },
+                {
+                  "key": "",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "15e5b522-e15b-4d29-ae25-fd804af80a15",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{server}}/auth/register/",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "auth",
+                "register",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"airBender\",\r\n    \"password\": \"Password123@\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server}}/auth/login/",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "auth",
+                "login",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcyNjE0MzM0LCJpYXQiOjE3NzI2MTQwMzQsImp0aSI6ImIwN2I4NjY0YjAzZDQ3MGZiZjBjNzUxNmM5NDdhNjU4IiwidXNlcl9pZCI6IjQifQ.qsjeC8nL-Bt6jgGuHsnr8LiVb2JY1UlDQbt-QUIlZRQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3MjcwMDQzNCwiaWF0IjoxNzcyNjE0MDM0LCJqdGkiOiJlZWE5ZjdlMzdjNzM0OGY1YjQ1YjQzNGNjODQ3NDdhOSIsInVzZXJfaWQiOiI0In0.MB3UkeeZovzzzhoaBje72J7Vb7j5V5lATK8mq5ma-bI\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server}}/auth/logout/",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "auth",
+                "logout",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Projects",
+      "item": [
+        {
+          "name": "Create_Project",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcyNjA5MzQ5LCJpYXQiOjE3NzI2MDkwNDksImp0aSI6IjNmMGU0ODk2YTA2ZjQzNGVhNzc4ZjVlZTdlZjMwYjNmIiwidXNlcl9pZCI6IjMifQ.dItm8yJUENXLYeoR8NFYQKQc3UYnvBcmXa7anDmuvkM",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Dummy Project 3\",\r\n  \"description\": \"This is a test project made by airBender\",\r\n  \"status\": \"active\",\r\n  \"duration\": 15\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server}}/projects/",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "projects",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get_My_Projects",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/projects/my/",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "projects",
+                "my",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get_Projects",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{server}}/projects/",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "projects",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update_Project",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcyNjExNDQ2LCJpYXQiOjE3NzI2MTExNDYsImp0aSI6IjRmMDQ5YWQ1YWZmZTRmYzM4ZTlhYzkwMTg1NTBlNzNkIiwidXNlcl9pZCI6IjQifQ.sxlYoFrtPqbqoHE2NBwYhn47wGh7DKqjYKpwFwuYGWY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"description\": \"Changed the description\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{server}}/projects/3/",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "projects",
+                "3",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete_Project",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{server}}/projects/2/",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "projects",
+                "2",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
